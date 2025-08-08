@@ -6,7 +6,7 @@ metadata:
   name: {{ printf "example.%s" .name | quote }}
 spec:
   destination:
-    namespace: argocd-gitops
+    namespace: argocd-gitops-apps
     server: {{ $config.spec.destination.server | quote }}
   project: default
   sources: []
