@@ -10,6 +10,7 @@ spec:
     namespace: argocd-gitops
     server: {{ $config.spec.destination.server | quote }}
   project: default
+  sources: []
   source:
     path: {{ .path | default .name | quote }}
     repoURL: {{ $config.spec.source.repoURL }}
@@ -17,6 +18,8 @@ spec:
     {{- with .tool }}
     {{- . | toYaml | nindent 4 }}
     {{- end }}
+    directory:
+      recurse: true
   syncPolicy:
     automated: {}
 ---
