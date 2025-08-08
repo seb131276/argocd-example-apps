@@ -5,8 +5,6 @@ kind: Application
 metadata:
   name: {{ printf "example.%s" .name | quote }}
   namespace: argocd-gitops
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: argocd-gitops
