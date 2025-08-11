@@ -2,7 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: podinfo-gitops
-  namespace: openshift-ct-customer-gitops
+  namespace: argocd-gitops-apps
+  labels:
+    app.kubernetes.io/instance: apps-gitops
 spec:
   destination:
     namespace: argocd-gitops-apps
