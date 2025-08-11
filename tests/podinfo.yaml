@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook-test
+  name: podinfo-gitops
 spec:
   destination:
     namespace: argocd-gitops-apps
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: guestbook
-    repoURL: https://github.com/seb131276/argocd-example-apps
+    path: kustomize
+    repoURL: https://github.com/stefanprodan/podinfo
     targetRevision: master
 
