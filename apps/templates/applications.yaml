@@ -3,8 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ printf "example.%s" .name | quote }}
-  
+  name: {{ printf "%s" .name | quote }}
 spec:
   destination:
     namespace: argocd-gitops-apps
