@@ -4,6 +4,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: {{ printf "example.%s" .name | quote }}
+  namespace: openshift-ct-customer-gitops
 spec:
   destination:
     namespace: argocd-gitops-apps
