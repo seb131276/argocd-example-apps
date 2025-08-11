@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  labels:
+    app.kubernetes.io/instance: gitops
+  name: guestbook-test
+spec:
+  destination:
+    namespace: argocd-gitops-apps
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: guestbook
+    repoURL: https://github.com/seb131276/argocd-example-apps
+    targetRevision: master
+  sources: []
