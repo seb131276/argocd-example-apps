@@ -2,16 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: podinfo-gitops
-  namespace: argocd-gitops-apps
-  labels:
-    app.kubernetes.io/instance: apps-gitops
+  namespace: argocd
 spec:
+  project: default
   destination:
     namespace: argocd-gitops-apps
     server: https://kubernetes.default.svc
-  project: default
   source:
     path: kustomize
     repoURL: https://github.com/stefanprodan/podinfo
     targetRevision: master
-
