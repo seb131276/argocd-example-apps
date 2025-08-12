@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: podinfo-gitops
+  namespace: openshift-ct-customer-gitops
 spec:
   project: default
   destination:
